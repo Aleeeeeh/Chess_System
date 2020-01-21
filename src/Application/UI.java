@@ -50,7 +50,7 @@ public class UI {
 			throw new InputMismatchException("Error reading ChessPosition. Valid values are from a1 to h8");
 		}
 	}
-
+	//Imprimir a partida de xadrez
 	public static void printMatch(ChessMatch chessMatch, List<ChessPiece> captured) {
 		printBoard(chessMatch.getPieces());
 		System.out.println();
@@ -58,6 +58,10 @@ public class UI {
 		System.out.println();
 		System.out.println("Turn: " + chessMatch.getTurn());
 		System.out.println("Waiting Player: " + chessMatch.getCurrentPlayer());
+		//Se estiver em check exibir um alerta
+		if(chessMatch.getCheck()) {
+			System.out.println("CHECK!");
+		}
 
 	}
 	//Imprimir o Tabuleiro
