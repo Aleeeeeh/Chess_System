@@ -57,12 +57,17 @@ public class UI {
 		printCapturedPieces(captured);
 		System.out.println();
 		System.out.println("Turn: " + chessMatch.getTurn());
-		System.out.println("Waiting Player: " + chessMatch.getCurrentPlayer());
-		//Se estiver em check exibir um alerta
-		if(chessMatch.getCheck()) {
-			System.out.println("CHECK!");
+		if(!chessMatch.getCheckMate()) { //Testar se não estiver em MATE continue senao exiba Winner
+			System.out.println("Waiting Player: " + chessMatch.getCurrentPlayer());
+			//Se estiver em check exibir um alerta
+			if(chessMatch.getCheck()) {
+				System.out.println("CHECK!");
+			}
 		}
-
+		else {
+			System.out.println("CHECKMATE!");
+			System.out.println("WINNER: " + chessMatch.getCurrentPlayer());
+		}
 	}
 	//Imprimir o Tabuleiro
 	public static void printBoard(ChessPiece[][] pieces) {
