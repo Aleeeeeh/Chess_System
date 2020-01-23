@@ -16,7 +16,8 @@ public class Pawn extends ChessPiece {
 		boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
 
 		Position p = new Position(0, 0);
-
+		//Lógica para testar se existe peças na posição ou nas diagonais para capturar ou ser impossivel
+		//de mover no exemplo da saida de peões
 		if (getColor() == Color.WHITE) {
 			p.setValues(position.getRow() - 1, position.getColumn());
 			if (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
